@@ -17,7 +17,7 @@ body {
 
 .intro {
     font-family: 'Chathura', sans-serif;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     width: 100%;
     opacity: 100%;
     color: black;
@@ -27,6 +27,7 @@ body {
     transition: 0.5s;
     position: fixed;
     bottom: 50%;
+    z-index: +100000
 }
 
 .sidemenu {
@@ -70,9 +71,46 @@ body {
     transition: 0.5s;
 }
 
+.glow {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80;
+  font-size: 80px;
+  font-family: 'Bad Script', cursive;
+  color: #FF69B4;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.glow h1 {
+    margin: 0;
+    padding: 0;
+    color: #111;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
 .boxed {
-  border: 7px solid black;
+  border: 3px solid black;
   background-color: rgb(242, 155, 200, 0.5);
+  position: center;
  /* padding: 15px 32px;
   margin-bottom: 100px;
   text-align: center;
@@ -80,15 +118,16 @@ body {
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;*/
-   position: absolute; 
-   top: 200px; 
-   left: 35%; 
-   width: 30%; 
+    top: 89px; 
+    left: 25%; 
+    width: 50%; 
+    display: block;
+    overflow: auto;
 }
 .button {
   border: none;
   color: black;
-  padding: 15px 32px;
+  padding: 10px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -102,15 +141,16 @@ body {
 .button--white {background-color: white;} /* White */
 
 .videoBG {
-    z-index: -1;
+    position: center;
+    z-index: +1;
     border: 7px solid black;
+    top:10px;
     align-items: center;
     width: auto;
     display: block;
     width: 80%;
     height: 80%;
 }
-
 
 a { transition: all 0.3s ease; }
 a:hover, a:focus, a.active {
